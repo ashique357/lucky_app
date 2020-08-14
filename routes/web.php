@@ -13,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/dashboard','AdminController@index');
+Route::get('/admin/profile','AdminController@profile');
+Route::get('/admin/profile/edit/{id}','AdminController@profileEdit');
+// Route::post('/admin/profile/edit/{id}','AdminController@profileUpdate');
 
-Route::get('/admin', function () {
-    return view('Admin.Pages.users');
-});
+Route::get('/admin/verified-request','VerifiedController@index')->name('admin.index');
+Route::get('/admin/verified/accept/{id}','VerifiedController@accept');
+Route::get('/admin/verified/cancel/{id}','VerifiedController@reject')->name('verify.cancel');
 
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
-header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
+

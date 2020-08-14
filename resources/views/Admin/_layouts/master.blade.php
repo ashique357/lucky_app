@@ -6,6 +6,7 @@
 @include('Admin._includes.sidebar')
 
 <!-- content -->
+
 @yield('content')
 
 <!-- content -->

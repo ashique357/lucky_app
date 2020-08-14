@@ -1,4 +1,5 @@
-<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<!-- <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script> -->
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -31,3 +32,7 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+<!-- <script src="{{asset('js/app.js')}}" ></script> -->
+
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
