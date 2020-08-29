@@ -25,14 +25,14 @@
                <form method="POST" action="{{ route('login') }}">
                   @csrf
                   <div class="input-group mb-3">
-                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
+                     <input id="email" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" placeholder="Username" required autocomplete="username" autofocus>
                      <div class="input-group-append">
                         <div class="input-group-text">
                            <span class="fas fa-envelope"></span>
                         </div>
                      </div>
                   </div>
-                  @error('email')
+                  @error('username')
                   <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                   </span>
@@ -53,7 +53,7 @@
                   <div class="row">
                      <div class="col-8">
                         <div class="icheck-primary">
-                           <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}
+                           <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                            <label for="remember">
                            Remember Me
                            </label>
@@ -66,11 +66,6 @@
                      <!-- /.col -->
                   </div>
                   <!-- /.social-auth-links -->
-                  @if (Route::has('password.request'))
-                  <p class="mb-1">
-                     <a href="{{ route('password.request') }}">I forgot my password</a>
-                  </p>
-                  @endif
                </form>
                <!-- <p class="mb-0">
                   <a href="" class="text-center">Register</a>

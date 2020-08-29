@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','telegram','image'
+        'name', 'email', 'password','telegram','image','username'
     ];
 
     /**
@@ -40,4 +40,6 @@ class User extends Authenticatable
     public function verified(){
         return $this->hasMany('App\Verified');
     }
+
+
 }

@@ -2,18 +2,15 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Carbon\Carbon;
+use App\User;
+use App\Quiz;
+use App\QuizWinner;
+use App\GoldHistory;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/admin/daily-quiz/today',function(){
+    $today=Carbon::today()->isoFormat('Do MMMM YYYY');
+    $quiz=Quiz::where(('date'),'=',$today)->get();
+    return response()->json($quiz);
 });
+

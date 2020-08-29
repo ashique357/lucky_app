@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
 
+Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::get('/admin/dashboard','AdminController@index');
 Route::get('/admin/profile','AdminController@profile');
 Route::get('/admin/profile/edit/{id}','AdminController@profileEdit');
@@ -25,4 +26,32 @@ Route::get('/admin/verified-request','VerifiedController@index')->name('admin.in
 Route::get('/admin/verified/accept/{id}','VerifiedController@accept');
 Route::get('/admin/verified/cancel/{id}','VerifiedController@reject')->name('verify.cancel');
 
+Route::get('/admin/choose-lucky-number','LuckyNumberController@index');
+Route::post('/admin/choose-lucky-number','DrawHistoryController@draw');
 
+Route::get('/admin/lottery-history','DrawHistoryController@index');
+Route::get('/admin/draw-publish/{id}','DrawHistoryController@publish')->name('draw.publish');
+
+Route::get('/admin/manage-users','AdminController@manageUsers');
+Route::get('/admin/give-point/{id}','AdminController@givePoint');
+
+Route::post('/admin/point-gift/{id}','AdminController@giftPoint');
+Route::post('/admin/add-note/{id}','AdminController@addNote');
+Route::post('/admin/change-password/{id}','AdminController@changePassword');
+Route::post('/admin/change-email/{id}','AdminController@changeEmail');
+
+Route::get('/admin/register-users','AdminController@registerUser');
+Route::post('/admin/register-users','AdminController@postRegisterUser');
+
+Route::get('/admin/user-point-history/{id}','AdminController@pointHistory');
+
+Route::get('/admin/my-wallet','AdminController@myWallet');
+Route::get('/admin/affilate','AdminController@myWallet');
+Route::get('/admin/anouncement','AdminController@myWallet');
+
+Route::get('/admin/daily-quiz','QuizController@create');
+Route::post('/admin/daily-quiz','QuizController@save');
+
+Route::post('/admin/daily-quiz/today','QuizController@get_winner');
+
+// Route::get('/admin/daily-quiz/today','QuizController@today_question');

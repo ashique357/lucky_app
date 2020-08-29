@@ -66,7 +66,7 @@
       </div><!-- /.container-fluid -->
     </section>
   </div>
-
+ 
 @include('Admin.Pages.modal')
 <script type="text/javascript">
      function deleteData(id)

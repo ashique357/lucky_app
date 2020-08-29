@@ -30,7 +30,7 @@
                </div>
                <!-- /.card-header -->
                <!-- form start -->
-               <form method="post" action="/admin/profile/edit/{{$u->id}}" enctype="multipart/form-data">
+               <form method="post" action="" enctype="multipart/form-data">
                   <div class="card-body">
                     <div class="form-group">
                         <label for="username">User name</label>

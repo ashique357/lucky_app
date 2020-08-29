@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Http\Request;
+use Auth;
+use App\User;
 class LoginController extends Controller
 {
     /*
@@ -37,4 +39,21 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function username(){
+        return 'username';
+    }
+
+    protected function attemptLogin(Request $request){
+    $user = User::where('username', $request->username)
+        ->where('password', $request->password)
+        ->first();
+
+    if(!isset($user)){
+        return false;
+    }
+    Auth::login($user);
+    return true;
+    }
+
 }
