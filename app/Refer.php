@@ -8,7 +8,7 @@ class Refer extends Model
 {
     protected $table="refers";
 
-    protected $fillable=['user_name','refer_user_name','refer_id'];
+    protected $fillable=['user_name','refer_user_name','refer_id','date'];
 
     public function user(){
         return $this->belongsTo('App\User');

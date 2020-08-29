@@ -55,3 +55,11 @@ Route::post('/admin/daily-quiz','QuizController@save');
 Route::post('/admin/daily-quiz/today','QuizController@get_winner');
 
 // Route::get('/admin/daily-quiz/today','QuizController@today_question');
+
+// Route::get('/admin/daily-refer','ReferController@get_daily_refer');
+
+
+Route::get('/admin/verified-deposit','DepositController@indexRequest')->name('deposit.index');
+Route::get('/admin/verified-deposit-other','DepositController@index')->name('depositOther.index');
+Route::get('/admin/verified-deposit/accept/{id}','DepositController@accept');
+Route::get('/admin/verified-deposit/cancel/{id}','DepositController@decline')->name('deposit.cancel');

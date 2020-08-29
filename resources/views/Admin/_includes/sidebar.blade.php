@@ -37,6 +37,16 @@
                   </p>
                </a>
             </li>
+
+            <li class="nav-item">
+               <a href="/admin/verified-request" class="nav-link">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <p>
+                     Verified User
+                  </p>
+               </a>
+            </li>
+
             <li class="nav-item">
                <a href="/admin/lottery-history" class="nav-link">
                   <i class="fas fa-tasks"></i>
@@ -80,7 +90,7 @@
                <ul class="nav nav-treeview" style="display: none;">
                   <li class="nav-item">
                      <a href="/admin/daily-quiz" class="nav-link">
-                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        <i class="fa fa-question-circle"></i>
                         <p>
                            Daily Quiz 
                         </p>
@@ -93,13 +103,13 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="/admin/verified-deposit" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Weekly Quiz</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="/admin/verified-deposit-other" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Deposit Casino Brand</p>
                      </a>
